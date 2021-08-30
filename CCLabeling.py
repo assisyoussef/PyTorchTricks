@@ -13,7 +13,6 @@ def getCC(img, max_iterations=100, device = 'cpu'):
             break
         else:
             count += 1
-    print(count)
     for index, elt in enumerate(torch.unique(comp)):
         comp [comp == elt.item()] = index + 1
     return comp
