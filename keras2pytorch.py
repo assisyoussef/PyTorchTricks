@@ -31,10 +31,10 @@ def keras_to_pytorch(keras, pytorch=None):
         st = [key for key in state_dict if "num_batches_tracked" not in  key]
         for p, k in zip(st, weight_dict):
             keras_weight = torch.from_numpy(weight_dict[k])
-            assert state_dict[p].shape == keras_weight.shape, f"Error in shapes when assignment weights to '{pytorch}'" 
+            assert state_dict[p].shape == keras_weight.shape, f"Error in shapes when assigning weights to '{p}'" 
             state_dict[p] = keras_weight
         pytorch.load_state_dict(state_dict)
-        print("Weights are loaded succesfully (from Keras to PyTorch)")
+        print("Weights are loaded successfully (from Keras to PyTorch)")
         return pytorch
     return weight_dict
   
