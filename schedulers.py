@@ -124,4 +124,4 @@ class WarmupScheduler(LearningRateScheduler):
                 self.schedulers[1].step(epoch = epoch)#, loss=loss)
             elif isinstance(self.schedulers[1], Poly) and epoch is not None :
                 self.schedulers[1].step(epoch = epoch)
-#        return self.get_lr()
+        return self.get_lr()
